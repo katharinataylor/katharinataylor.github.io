@@ -1,0 +1,52 @@
+footer {
+	width: 100%;
+	border-top: 4px solid $highlight-color;
+	margin-top: 50px;
+	background: $tertiary-color;
+	box-shadow: inset 0 0 0 1000px rgba(0,0,0,.1);
+
+	@media screen and (device-height: 568px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+    	width: 103%;
+	}
+
+	ul {
+		height: 100%;
+		margin: 0;
+		padding: 0;
+	}
+
+	p {
+		color: $secondary-color;
+		margin-top: 30px;
+	}
+}
+
+footer,
+.push {
+	height: 200px;
+}
+
+.social-links {
+	@extend %layout-wide;
+
+	li {
+		width: 50px;
+		height: 50px;
+		margin-top: 50px;
+		display: inline-block;
+	}
+}
+
+svg {
+	width: 35px;
+	height: 35px;
+	opacity: .6;
+
+	&:hover {
+		opacity: 1;
+	}
+}
+
+#copyright {
+	@include text($align: center);
+}

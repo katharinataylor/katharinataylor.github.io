@@ -1,0 +1,67 @@
+nav {
+	@include position($position: absolute, $left: 0, $top: 0);
+	margin-top: calc(100vh + 15px);
+	width: 100%;
+	height: 50px;
+	border-bottom: 1px solid $tertiary-color;
+	overflow: hidden;
+	padding-top: 5px; 
+
+	@media screen and (device-height: 568px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+    	padding-top: 15px;
+    	width: 103%;
+	}
+
+	ul {
+		@include flex(flex, wrap, space-around);
+		width: 90%;
+		padding: 0;
+		margin: 0 0 0 5%;
+		height: 100%;
+
+		@media (min-width: #{$brk-one}) {
+			width: 80%;
+			margin-left: 10%;
+		}
+		@media (min-width: #{$brk-two}) {
+			width: 70%;
+			margin-left: 15%;
+		}
+		@media (min-width: #{$brk-three}) {
+			width: 60%;
+			margin-left: 20%;
+		}
+		@media (min-width: #{$brk-four}) {
+			width: 50%;
+			margin-left: 25%;
+		}
+		@media (min-width: #{$brk-five}) {
+			width: 40%;
+			margin-left: 30%;
+		}
+		@media (min-width: #{$brk-six}) {
+			width: 30%;
+			margin-left: 35%;
+		}
+
+		li {
+			@include text($transform: uppercase);
+			display: inline-block;
+			height: 100%;
+
+			&:hover {
+				border-bottom: 2px solid $highlight-color;
+			}
+		}
+	}
+
+	a {
+		@include text($color: $black);
+
+		&:focus {
+			@include text($color: $white);
+			background: $highlight-color;
+			padding: 0 7px 25px 7px;
+		}
+	}
+}

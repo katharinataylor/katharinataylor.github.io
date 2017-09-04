@@ -1,0 +1,45 @@
+* {
+	box-sizing: border-box;
+}
+
+body,
+html {
+	height: 100%;
+	margin: 0;
+}
+
+body {
+	@include text($align: center);
+	background: $white;
+	width: 100%;
+	font-family: 'Poppins', sans-serif;
+}
+
+p {
+	@include text($weight: 300, $align: left);
+}
+
+ul {
+	list-style: none;
+}
+
+a {
+	@include text($weight: 300, $decoration: none);
+}
+
+main {
+	margin-top: calc(100vh + 65px);
+	width: 100%;
+}
+
+h3 {
+	@include text($weight: 400, $align: left, $transform: uppercase);
+	width: 100%;
+	letter-spacing: 5px;
+	margin-top: 70px;
+}
+
+.wrapper {
+	min-height: 100%;
+	margin-bottom: -200px;
+}

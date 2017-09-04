@@ -1,0 +1,31 @@
+// Text
+
+@mixin text($size: null, $weight: null, $color: null, $align: null, $decoration: null, $transform: null) {
+	font-size: $size;
+	font-weight: $weight;
+	color: $color;
+	text-align: $align;
+	text-decoration: $decoration;
+	text-transform: $transform;
+}
+
+
+// Flex
+
+@mixin flex($display, $wrap, $justify, $direction: null) {
+	display: $display;
+	flex-wrap: $wrap;
+	justify-content: $justify;
+	flex-direction: $direction;
+}
+
+
+// Position 
+
+@mixin position($position, $top: null, $left: null, $bottom: null, $right: null) {
+	position: $position;
+	top: $top;
+	left: $left;
+	bottom: $bottom;
+	right: $right;
+}
