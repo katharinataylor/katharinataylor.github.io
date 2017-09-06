@@ -174,9 +174,13 @@ input.description-button {
 }
 
 .website-links {
+	@include text($color: $black, $weight: 400);
 	width: 48%;
 	padding: 0;
 	height: 50px;
+	border: 1px solid $secondary-color;
+	border-radius: 5px;
+	padding-top: 11px;
 }
 
 .website {
