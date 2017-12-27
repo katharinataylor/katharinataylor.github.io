@@ -1,0 +1,574 @@
+/* GENERAL */
+
+* {
+	box-sizing: border-box;
+}
+
+html, 
+body {
+	height: 100%;
+	margin: 0;
+}
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	text-align: left;
+	font-size: 16px;
+	overflow-x: hidden;
+	color: #323A3E;
+}
+
+a {
+	text-decoration: none;
+	color: #323A3E;
+}
+
+li {
+	list-style: none;
+}
+
+p {
+	line-height: 2rem;
+}
+
+/* HEADER */
+
+header {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: linear-gradient(to top, rgba(255,255,255,0) 60%,
+              rgba(255,255,255,1)), url('../images/sunset-poppy3.jpg') no-repeat;
+	background-size: cover;
+}
+
+header h1,
+header h3 {
+	text-align: center;
+}
+
+header h1 {
+	font-family: 'Dancing Script', cursive;
+	text-shadow: 1px 3px 9px #999;
+	margin-top: 30px;
+	font-size: 5.5em;
+}
+
+header h3 {
+	text-transform: uppercase;
+	letter-spacing: 1em;
+	margin-top: -40px;
+	font-weight: bold;
+	font-size: 1.1em;
+	text-shadow: -2px 0px 5px #999;
+}
+
+header img {
+	border-radius: 50%;
+	width: 200px;
+	height: 200px;
+	border: 3px solid #fff;
+}
+
+#avatar {
+	display: flex;
+	justify-content: space-around;
+	flex-direction: row;
+	z-index: 1000;
+}
+
+#learn-more {
+	position: absolute;
+	top: 85%;
+	width: 100%;
+	text-align: center;
+	color: #fff;
+}
+
+header p {
+	color: #fff;
+}
+
+i {
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+}
+
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+/* NAVIGATION */
+
+nav {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	height: 80px;
+	width: 100%;
+	box-shadow: 0 4px 10px -4px #323A3E;
+	font-weight: bold;
+	background: #fafafa;
+}
+
+nav ul {
+	height: 100%;
+	text-transform: uppercase;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	flex-direction: column;
+	margin-top: 0;
+	padding: 0;
+	width: 100%;
+}
+
+nav li {
+	padding-right: 10px;
+	padding-left: 10px;
+	padding-top: 28px;
+	height: 100%;
+	margin-top: 0;
+	text-align: center;
+}
+
+nav li:hover {
+	background: #fdbd63;
+	color: #fff;
+}
+
+nav a {
+	color: inherit;
+}
+
+/* MAIN */
+
+.wrapper {
+	min-height: 100%;
+	margin-bottom: -150px;
+}
+
+main {
+	font-weight: 300;
+	margin-top: calc(100vh + 80px);
+	width: 100%;	
+}
+
+main h3 {
+	text-transform: uppercase;
+	letter-spacing: .7em;
+}
+
+.main-narrow {
+	width: 80%;
+	height: auto;
+	min-height: 480px;
+	margin-left: 10%;
+	padding-top: 20px;
+}
+
+/* ABOUT, SKILLS*/
+
+.about-me,
+.my-skills {
+	height: 100%;
+	line-height: 1.5em;
+	margin-top: 80px;
+	width: 100%;
+}
+
+.my-skills ul {
+	padding: 0;
+}
+
+.my-skills li {
+	display: inline-block;
+	border: 1px solid #fdbd63;
+	color: #fdbd63;
+	font-weight: bold;
+	border-radius: 5px;
+	padding: 10px;
+	margin-bottom: 15px;
+	margin-right: 10px;
+	font-size: .8em;
+}
+
+.my-skills li:hover {
+	background: #fdbd63;
+	color: #fff;
+}
+
+/* WORK */
+
+.my-work {
+	width: 100%;
+	height: 100%;
+	line-height: 1.5em;
+	margin-top: 80px;
+	margin-bottom: 50px;
+	background: #323A3E;
+	padding-top: 90px;
+	padding-bottom: 50px;
+}
+
+.my-work h3 {
+	text-align: center;
+	margin-top: -10px;
+	color: #fafafa;
+}
+
+/* GALLERY */
+
+#gallery {
+	width: 95%;
+	margin-left: 2.5%;
+	padding-bottom: 50px;
+	padding-top: 20px;
+}
+
+.gallery-ul {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	list-style: none;
+	padding-left: 0;
+	margin-top: 60px;
+}
+
+.gallery-ul > li {
+	margin: 0;
+	padding: 0;
+	margin-bottom: 30px;
+	width: 100%;
+}
+
+.gallery-li a {
+	display: flex;
+	justify-content: space-around;
+	flex-direction: row;
+	margin-top: -5px;
+}
+
+.photo {
+	position: relative;
+	margin-bottom: 30px;
+	overflow: hidden;
+	margin: 0 auto;
+	width: 100%;
+	max-width: 400px;
+	min-width: 300px;
+	height: 250px;
+	margin-bottom: 30px;
+}
+
+.photo img {
+	width: 100%;
+	height: 100%;
+	backface-visibility: hidden;
+  	position: absolute;
+}
+
+.card {
+	height: 100%;
+	position: absolute;
+	transform-style: preserve-3d;
+	transition: all 1s ease-in-out;
+	width: 100%;
+}
+
+.card:hover {
+  transform: rotateY(180deg);
+}
+
+.photo-overlay {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	flex-direction: column;
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding-left: 20px;
+	padding-right: 20px;
+	align-items: center;
+	background: #fafafa;
+	width: 100%;
+	height: 100%;
+  	transform: rotateY(180deg);
+}
+
+.work-details {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	flex-direction: column;
+	height: 330px;
+	margin-top: 15px;
+	display: none;
+	color: #323A3E;
+}
+
+.description { 
+	width: 100%;
+	overflow: scroll;
+	height: 140px;
+	color: #fafafa;
+	margin-top: 0;
+	margin-bottom: 25px;
+}
+
+.skill-list {
+	padding-left: 0;
+}
+
+.skill-list li {
+	display: inline-block;
+	background: #fdbd63;
+	border-radius: 5px;
+	padding: 10px;
+	font-weight: bold;
+	color: #fff;
+	margin-bottom: 10px;
+	margin-right: 5px;
+	font-size: .8em;
+}
+
+.website-buttons {
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	width: 100%;
+	height: 50px;
+}
+
+.website-links {
+	width: 48%;
+	padding: 0;
+	height: 50px;
+	border: 1px solid #323A3E;
+	font-weight: bold;
+	border-radius: 5px;
+	padding-top: 11px;
+}
+
+.website:hover,
+.source-code:hover {
+	color: #fff;
+	background: #323A3E;
+	transition: all .6s ease-out;
+}
+
+.work-div {
+	height: 150px;
+	padding: 15px;
+}
+
+.arrow {
+	color: #fafafa;
+}
+
+.up {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+    border: solid grey;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    cursor: pointer;
+}
+
+/* CONTACT */
+
+.contact-me {
+	margin-top: 30px;
+	float: left;
+	width: 100%;
+}
+
+.contact-details {
+	margin: 0;
+	padding: 0;
+	float: right;
+	margin-top: 100px;
+	width: 100%;
+}
+
+.contact-details ul {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+.contact-details li {
+	margin-bottom: 10px;
+}
+
+.contact-details a {
+	color: #323A3E;
+	font-weight: bold;
+}
+
+.contact-details svg {
+	margin-right: 20px;
+	margin-bottom: -8px;
+	fill: #323A3E;
+}
+
+.contact-details svg:hover {
+	opacity: .8;
+}
+
+.phone {
+	margin-top: 10px;
+}
+
+.mail {
+	margin-top: 25px;
+}
+
+/* FOOTER */
+
+footer, 
+.push {
+	height: 150px;
+	margin-top: 100px;
+}
+
+footer {
+	width: 100%;
+	background: #fafafa;
+	border-bottom: 4px solid #fdbd63;
+}
+
+footer h2 {
+	color: #fdbd63;
+	font-family: 'Dancing Script', cursive;
+	font-size: 3em;
+	margin: 0;
+}
+
+.social-links {
+	width: 26%;
+}
+
+.social-links ul {
+	display: flex;
+	justify-content: space-between;
+	padding-left: 0;
+}
+
+.social-links svg {
+	width: 35px;
+	height: 35px;
+}
+
+.social-links svg:hover {
+	opacity: .8;
+}
+
+.footer {
+	display: flex;
+	justify-content: space-around;
+	padding-top: 30px;
+	width: 280px;
+	height: 100px;
+	margin: 0 auto;
+}
+
+#copyright {
+	text-align: center;
+	color: #fdbd63;
+	font-weight: bold;
+	font-size: .9em;
+	margin-top: -5px;
+}
+
+/* MEDIA QUERIES */
+
+@media (min-width: 420px) {
+
+	nav ul {
+		width: 90%;
+		margin-left: 5%;
+	}
+}
+
+@media (min-width: 768px) {
+
+	header h1 {
+		font-size: 7em;
+	}
+
+	header h3 {
+		margin-top: -70px;
+	}
+
+	nav ul {
+		width: 60%;
+		margin-left: 20%;
+	}
+
+	nav li {
+		margin-right: 20px;
+		margin-left: 20px;
+	}
+
+	.gallery-ul > li {
+		width: 45%;
+	}
+
+	footer,
+	.push {
+		margin-top: 60px;
+	}
+}
+
+@media (min-width: 1024px) {
+
+	header h1 {
+		font-size: 8em;
+	}
+
+	nav ul {
+		width: 40%;
+		margin-left: 30%;
+	}
+
+	.about-me,
+	.my-skills {
+		width: 45%;
+	}
+
+	.about-me {
+		float: left;
+	}
+
+	.my-skills {
+		float: right;
+		margin-left: 2.5%;
+	}
+
+	.gallery-ul > li {
+		width: 30%;
+	}
+
+	.contact-me {
+		width: 59%;
+	}
+
+	.contact-details {
+		width: 41%;
+		padding-left: 40px;
+	}
+
+	footer,
+	.push {
+		margin-top: 0;
+	}
+}

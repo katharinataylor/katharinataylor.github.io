@@ -1,109 +1,45 @@
-#about {
-	@include flex(flex, wrap, space-between);
-	@extend %layout-wide;
-	margin-bottom: 50px;
-	margin-top: 10px;
-	padding-bottom: 30px;
-	border-bottom: 1px solid $highlight-color;	
-	
-	@media (min-width: #{$brk-four}) {
-		width: 70%;
-		margin-left: 15%;
-	}
+.about-me,
+.my-skills {
+	height: 100%;
+	line-height: 1.5em;
+	margin-top: 80px;
+	width: 100%;
 
-	h3 {
-		margin-top: 50px;
+	@media (min-width: #{$brk-three}) {
+		width: 45%;
 	}
 }
 
-.info {
+.about-me {
 	
-	svg {
-		padding: 0;
-		margin-bottom: -10px;
-		width: 30px;
-		height: 30px;
-		transition: all .3s ease-in-out;
-
-		&:hover {
-			transform: scale(1.2) rotate(-10deg);
-			transition: all .5s ease-in-out;
-		}
+	@media (min-width: #{$brk-three}) {
+		float: left;
 	}
 }
 
-.skills {
+.my-skills {
 
+	@media (min-width: 1024px) {
+		float: right;
+		margin-left: 2.5%;
+	}
+	
 	ul {
-		@include flex(flex, wrap, space-around);
 		padding: 0;
 
 		li {
-			@include text($weight: 300);
-			border: 1px solid $secondary-color;
+			@include text($color: $tertiary-color, $weight: bold, $size: .8em);
+			display: inline-block;
+			border: 1px solid $tertiary-color;
 			border-radius: 5px;
 			padding: 10px;
-			margin: 0 3px 10px 3px;
-		}
-	}
-}
+			margin-bottom: 15px;
+			margin-right: 10px;
 
-.skills,
-.info {
-	width: 100%;
-
-	@media (min-width: #{$brk-four}) {
-		width: 45%;
-		margin: 0;
-	}
-	@media (min-width: #{$brk-six}) {
-		width: 48%;
-	}
-}
-
-.avatar {
-	@include flex(flex, wrap, space-around);
-	@extend %layout-wide;
-
-	@media (min-width: #{$brk-four}) {
-		width: 70%;
-		margin-left: 15%;
-	}
-
-	img {
-		height: 190px;
-		width: 190px;
-		border-radius: 50%;
-		border: 2px solid $highlight-color;
-		padding: 5px;
-		margin-top: 30px;
-		margin-bottom: 30px;
-	}
-
-	div {
-		@include flex(flex, wrap, space-around, $direction: column);
-		width: 100%;
-
-		@media (min-width: #{$brk-six}) {
-			width: 65%;
-			margin-right: 0;
-			padding-right: 0;
-		}
-	}
-
-	p {
-		@include flex(flex, wrap, space-around);
-		@include text($color: $highlight-color, $size: 1.7rem);
-		font-family: 'Dancing Script', cursive;
-		margin-top: 0;
-		margin-bottom: 0;
-		text-shadow: 1px 1px $secondary-color;
-		
-		@media (min-width: #{$brk-two}) {
-			font-size: 2.5rem;
-		}
-		@media (min-width: #{$brk-six}) {
-			font-size: 3rem;
+			&:hover {
+				@include text($color: $white);
+				background: $tertiary-color;
+			}
 		}
 	}
 }

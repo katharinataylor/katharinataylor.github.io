@@ -1,180 +1,136 @@
-#work {
-	@extend %layout-wide;
-	padding-bottom: 30px;
-	border-bottom: 1px solid $highlight-color;
-	margin-top: -20px;
-
-	@media (min-width: #{$brk-four}) {
-		width: 70%;
-		margin-left: 15%;
-	}
-}
-
-.work-header {
-	padding: 0;
-	margin: 0;
+.my-work {
 	width: 100%;
+	height: 100%;
+	line-height: 1.5em;
+	margin-top: 80px;
+	margin-bottom: 50px;
+	background: $secondary-color;
+	padding-top: 90px;
+	padding-bottom: 50px;
+
+	h3 {
+		@include text($align: center, $color: $primary-color);
+		margin-top: -10px;
+	}
 }
 
 #gallery {
+	width: 95%;
+	margin-left: 2.5%;
+	padding-bottom: 50px;
+	padding-top: 20px;
+}
+
+.gallery-ul {
+	@include flex(flex, wrap, space-between);
+	width: 100%;
+	list-style: none;
+	padding-left: 0;
+	margin-top: 60px;
+}
+
+.gallery-ul > li {
+	margin: 0;
+	padding: 0;
+	margin-bottom: 30px;
 	width: 100%;
 
-	.gallery-ul {
-		@include flex(flex, wrap, space-between);
-		width: 100%;
-		padding: 0;
-
-		@media (min-width: #{$brk-two}) {
-			justify-content: space-around;
-		}
-		@media (min-width: 1115px) {
-			justify-content: space-between;
-		}
+	@media (min-width: #{$brk-two}) {
+		width: 45%;
 	}
 
-	.gallery-li {
-		@include text($align: left);
-		margin-top: 35px;
-		padding: 5px;
-		height: auto;
+	@media (min-width: #{$brk-three}) {
+		width: 30%;
 	}
+}
+
+.gallery-li a {
+	@include flex(flex, wrap, space-around, row);
+	margin-top: -5px;
+}
+
+.photo {
+	position: relative;
+	margin-bottom: 30px;
+	overflow: hidden;
+	margin: 0 auto;
+	width: 100%;
+	max-width: 400px;
+	min-width: 300px;
+	height: 250px;
+	margin-bottom: 30px;
 
 	img {
 		width: 100%;
 		height: 100%;
+		backface-visibility: hidden;
+	  	position: absolute;
 	}
 }
 
-.photo {
-	@include position($position: relative);
-	@include flex(flex, wrap, space-around);
-	margin-bottom: 30px;
-	overflow: hidden;
-	box-shadow: 10px 10px 5px $secondary-color;
-	margin: 0 auto;
-	
-	@media (min-width: #{$brk-two}) {
-		width: 250px;
-		height: 150px;
-	}
-	@media (min-width: #{$brk-three}) {
-		width: 300px;
-		height: 200px;
-	}
-	@media (min-width: #{$brk-four}) {
-		width: 250px;
-		height: 150px;
-	}
-	@media (min-width: #{$brk-five}) {
-		width: 300px;
-		height: 200px;
-	}
-	@media (min-width: #{$brk-six}) {
-		width: 250px;
-		height: 150px;
+.card {
+	height: 100%;
+	position: absolute;
+	transform-style: preserve-3d;
+	transition: all 1s ease-in-out;
+	width: 100%;
+
+	&:hover {
+		transform: rotateY(180deg);
 	}
 }
 
 .photo-overlay {
-	@include flex(flex, wrap, center, $direction: column);
-	@include position($position: absolute, $top: 0, $left: 0, $bottom: 0, $right: 0);
+	@include flex(flex, wrap, center, column);
+	@include position($position: absolute, $top: 0, $left: 0);
 	padding-left: 20px;
 	padding-right: 20px;
 	align-items: center;
-	opacity: .8;
-	transition: opacity .5s;
-
-	&:hover {
-		opacity: 1;
-	}
-}
-
-#photo1 {
-	background: #269867;
-}
-
-#photo2 {
-	background: #22AFD8;
-}
-
-#photo3 {
-	background: #D82434;
-}
-
-#photo4 {
-	background: #812A98;
-}
-
-#photo5 {
-	background: #D89222;
-}
-
-#photo6 {
-	background: #989639;
-}
-
-input.description-button {
-	@include text($weight: 300, $size: 1rem);
-	border: none;
-	outline: none;
-	padding: 10px;
-	background: $white;
-	border-radius: 5px;
-	opacity: .7;
-
-	&:hover {
-		opacity: 1;
-		border: 1px solid $secondary-color;		
-	}
-
-	&:focus {
-		opacity: 1;
-		border: 1px solid $secondary-color;		
-	}
+	background: $primary-color;
+	width: 100%;
+	height: 100%;
+  	transform: rotateY(180deg);
 }
 
 .work-details {
-	@include flex(flex, wrap, space-between, $direction: column);
+	@include flex(flex, wrap, space-between, column);
+	@include text($color: $secondary-color);
 	height: 330px;
+	margin-top: 15px;
 	display: none;
+}
 
-	.description { 
-		width: 100%;
-		overflow: scroll;
-		height: 140px;
-	}
-
-	input {
-		@include text($size: 1rem, $weight: 400);
-		border: 1px solid $secondary-color;
-		padding: 10px;
-		width: 100%;
-		outline: 0;
-		background: $white;
-		border-radius: 5px;
-		transition: all .4s ease-out;
-	}
-
-	a {
-		@include flex(flex, wrap, space-around, row);
-	}
+.description { 
+	@include text($color: $primary-color);
+	width: 100%;
+	overflow: scroll;
+	height: 140px;
+	margin-top: 0;
+	margin-bottom: 25px;
 }
 
 .skill-list {
-	@include text($color: $secondary-color);
-	height: 40px;
-	margin-top: 25px;
-	font-size: .9rem;
+	padding-left: 0;
+
+	li {
+		@include text($color: $white, $weight: bold, $size: .8em);
+		display: inline-block;
+		background: $tertiary-color;
+		border-radius: 5px;
+		padding: 10px;
+		margin-bottom: 10px;
+		margin-right: 5px;
+	}
 }
 
 .website-buttons {
-	@include flex(flex, wrap, space-between);
+	@include flex(flex, wrap, space-around);
 	width: 100%;
 	height: 50px;
 }
 
 .website-links {
-	@include text($color: $black, $weight: 400);
+	@include text($weight: bold);
 	width: 48%;
 	padding: 0;
 	height: 50px;
@@ -183,35 +139,20 @@ input.description-button {
 	padding-top: 11px;
 }
 
-.website {
-
-	&:hover {
-		@include text($color: $white);
-		background: $tertiary-color;
-		border: 1px solid $white;
-		transition: all .4s ease-out;
-	}
-
-}
-
-.source-code {
-
-	&:hover {
-		@include text($color: $white);
-		background: $highlight-color;
-		border: 1px solid $secondary-color;
-		transition: all .4s ease-out;
-	}
-	
+.website:hover,
+.source-code:hover {
+	@include text($color: $white);
+	background: $secondary-color;
+	transition: all .6s ease-out;
 }
 
 .work-div {
-	margin-top: 20px;
 	height: 150px;
+	padding: 15px;
+}
 
-	@media (min-width: #{$brk-two}) {
-		width: 250px;
-	}
+.arrow {
+	@include text($color: $primary-color);
 }
 
 .up {

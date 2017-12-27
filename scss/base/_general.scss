@@ -2,44 +2,50 @@
 	box-sizing: border-box;
 }
 
-body,
-html {
+html, 
+body {
 	height: 100%;
 	margin: 0;
 }
 
 body {
-	@include text($align: center);
-	background: $white;
-	width: 100%;
-	font-family: 'Poppins', sans-serif;
-}
-
-p {
-	@include text($weight: 300, $align: left);
-}
-
-ul {
-	list-style: none;
+	@include text($align: left, $size: 16px, $color: $secondary-color);
+	font-family: 'Open Sans', sans-serif;
+	overflow-x: hidden;
 }
 
 a {
-	@include text($weight: 300, $decoration: none);
+	@include text($decoration: none, $color: $secondary-color);
 }
 
-main {
-	margin-top: calc(100vh + 65px);
-	width: 100%;
+li {
+	list-style: none;
 }
 
-h3 {
-	@include text($weight: 400, $align: left, $transform: uppercase);
-	width: 100%;
-	letter-spacing: 5px;
-	margin-top: 70px;
+p {
+	line-height: 2rem;
 }
 
 .wrapper {
 	min-height: 100%;
-	margin-bottom: -200px;
+	margin-bottom: -150px;
+}
+
+main {
+	@include text($weight: 300);
+	margin-top: calc(100vh + 80px);
+	width: 100%;	
+
+	h3 {
+		@include text($transform: uppercase);
+		letter-spacing: .7em;
+	}
+}
+
+.main-narrow {
+	width: 80%;
+	height: auto;
+	min-height: 480px;
+	margin-left: 10%;
+	padding-top: 20px;
 }
